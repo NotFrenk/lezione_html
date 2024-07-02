@@ -1,0 +1,38 @@
+
+            body {
+                background-color: rgb(65, 44, 21);
+                text-align: center;
+            }
+
+            p {
+                text-align: left;
+                font-size: xx-large;
+            }
+            /* id='' */
+            #testo_rosso {
+                color: red;
+                background-color: aliceblue;
+            }
+            /* class='' */
+            .testo_verde {
+                color: green;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-size: 40px;
+                text-align: center;
+            }
+
+            .testo_giallo {
+                color: yellow;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-size: 40px;
+                text-align: right;
+            }
+
+            p.testo_verde{
+                text-align: center;
+                font-size: large;
+            }
+
+            div p {
+                color: yellow;
+              }
