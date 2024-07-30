@@ -13,14 +13,55 @@ console.log("ciao");
 process.exit(0);
 */
 
+
+/*CONTA LE VOCALI E LE CONSONANTI*/
+
+const prompt = require('prompt-sync')();
+
+let vocali = 'aeiouAEIOU'
+var parola = prompt("Scrivi una parola ")
+
+while (parola != 'exit')
+    {
+        count_vocali = 0
+        count_consonanti = 0
+        for (i = 0; i < parola.length; i++)
+        {
+            lettera = parola[i];
+            if( vocali.includes(lettera))
+            {
+                count_vocali += 1
+            }
+
+            else
+            {
+                count_consonanti += 1
+            }
+        }
+        console.log('\nle vocali sono ' + count_vocali)
+        console.log('le consonanti sono ' + count_consonanti)
+        parola = prompt ("\nScrivi una parola ")
+
+    }
+
+
+
+
+
+
+
+
+
+
 /*
 Per usare il prompt:
 
 npm install prompt-sync
 
 */
-
+/*
 const prompt = require('prompt-sync')();
+*/
 /*
 const str = prompt('Enter a string: ');
 console.log("Hai inserito " + str);
@@ -37,7 +78,7 @@ console.log("La somma vale " + c)
 */
 
 
-
+/*
 var a;
 var b;
 a = prompt("Inserisci primo numero:")
@@ -46,7 +87,7 @@ a1 = parseInt(a)
 b1 = parseInt(b)
 c = a1 + b1
 console.log("La somma vale " + c) 
-
+*/
 
 /*
 a = prompt("Inserisci primo numero:")
@@ -129,8 +170,9 @@ if(iPosizione >= 0)
 	console.log("La z c'e'");
 */
 
-
+/*
 "ciao;buonasera;buonanotte;"
+*/
 
 /*ESERCIZIO: scrivere un programma che data una stringa (es. sMiaStringa = "buonasera")
 verifica se la stringa contiene la lettera f nei primi 4 caratteri*/
@@ -171,7 +213,7 @@ più corta di 4 (es. cane) stampa a schermo direttamente l'esito negativo.*/
 stringa termina con una vocale. Indizio: usa la lunghezza della stringa*/
 
 
-
+/*
 function TerminaConLettera(sStringa,sLettera)
 {
 	lunghezzaStringa = sStringa.length;
@@ -186,7 +228,7 @@ function TerminaConLettera(sStringa,sLettera)
 var iRet;
 iRet = TerminaConLettera("paperino","a");
 */
-
+/*
 function TerminaGruppoLettere(sStringa,vArrayLettere)
 {
 	iLenVect = vArrayLettere.length;
@@ -204,6 +246,7 @@ function TerminaGruppoLettere(sStringa,vArrayLettere)
 	}
 	return 0;
 }
+*/
 /*
 var oPersona={nome:"Giulio", Cognome:"Cesare", eta:32}
 console.log(oPersona.eta);
