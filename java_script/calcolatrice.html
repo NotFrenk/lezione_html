@@ -90,21 +90,107 @@ button:hover {
 	</style>
 
     <script>
-        function inserisciNumero(num)
+      var Stato = 0;
+      var PrimoNumero = 0;
+      var SecondoNumero = 0;
+      var Operatore = 0;//1+, 2-, 3*, 4
+      
+      function inserisciNumero(num)
+      {
+        switch(Stato)
         {
+          case 0:
             console.log("hai richiesto di gestire il numero " + num)
-            if (document.getElementById("schermo").value=="0"){
+            if (document.getElementById("schermo").value=="0")
+              {
                 document.getElementById("schermo").value = num
-            }
-            else{
-            document.getElementById("schermo").value += num
-            }
-        }
+              }
+            else
+              {
+                document.getElementById("schermo").value += num
+              }
+          break;
 
-        function CanciellaTutto()
+          case 1:
+            document.getElementById("schermo").value = num
+            Stato = 2;
+            break;
+          
+          case 2:
+            if (document.getElementById("schermo").value=="0")
+              {
+                document.getElementById("schermo").value = num
+              }
+            else
+              {
+                document.getElementById("schermo").value += num
+              }
+            break;
+
+          case 3:
+            document.getElementById("schermo").value = num;
+            stato = 0
+            break;
+          
+          default:
+            break;
+
+        }
+        
+      }
+
+      function inserisciOperatore(oper)
+      {
+        switch(Stato)
         {
+          case 0:
+            Operatore = oper;
+            PrimoNumero = parseInt(document.getElementById("schermo").value);
+            Stato = 1;
+            break;
 
+          case 1:
+
+            break;
+          
+          case 2:
+            break;
+          
+          default:
+            break;
         }
+      }
+
+      function GestisciUguale()
+      {
+        SecondoNumero = parseInt();
+        Res = 0;
+        switch(Operatore)
+        {
+          case 1:
+            Res = PrimoNumero + SecondoNumero;
+            break;
+          
+          case 2:
+            Res = PrimoNumero - SecondoNumero;
+            break;
+          
+          case 3:
+            Res = PrimoNumero * SecondoNumero;
+            break;
+
+          case 4:
+            Res = PrimoNumero / SecondoNumero;
+            break;
+        }
+        document.getElementById("schermo").value = Res.toString();
+        stato = 3;
+      }
+
+      function CanciellaTutto()
+      {
+
+      }
     </script>
 </head>
 <body>
@@ -114,7 +200,7 @@ button:hover {
 		
 		<div class="calculator-keys">
 		  
-		  <button type="button" class="operator" value="+">+</button>
+		  <button type="button" class="operator" value="+" onclick="inserisciOperatore(1)">+</button>
 		  <button type="button" class="operator" value="-">-</button>
 		  <button type="button" class="operator" value="*">&times;</button>
 		  <button type="button" class="operator" value="/">&divide;</button>
@@ -134,11 +220,11 @@ button:hover {
 		  <button type="button" value="3" onclick="inserisciNumero(3)">3</button>
 	  
 	  
-		  <button type="button" value="0">0</button>
+		  <button type="button" value="0" onclick="inserisciNumero(0)">0</button>
 		  <button type="button" class="decimal function" value=".">.</button>
 		  <button type="button" class="all-clear function" value="all-clear">AC</button>
 	  
-		  <button type="button" class="equal-sign operator" value="=">=</button>
+		  <button type="button" class="equal-sign operator" value="=" onclick="GestisciUguale()">=</button>
 	  
 		</div>
 	  </div>
